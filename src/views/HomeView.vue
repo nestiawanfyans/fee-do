@@ -1,11 +1,7 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  $END$
+  <h1>Halaman Home</h1>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
