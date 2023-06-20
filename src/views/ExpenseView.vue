@@ -1,5 +1,9 @@
 <template>
-  <h3>Halaman Pengeluaran</h3>
+  <Card
+      title="Expenses Amount"
+      :value="this.currentExpensesAmount"
+  />
+
   <Category
       :categories="categories"
       @create-category="handleCreateCategory"
@@ -20,34 +24,33 @@
 import Swal from "sweetalert2";
 import Category from "@/components/Category.vue";
 import Expense from "@/components/Expense.vue";
+import Card from "@/components/Card.vue";
+import axios from "axios";
 
 export default {
-  components: {Expense, Category},
+  components: {Card, Expense, Category},
+  mounted() {
+    axios.get(this.backendURL + '/categories')
+        .then((res) => {
+          console.log(res.data)
+          this.categories = res.data
+        }).catch((err) => {
+      console.log(err)
+    })
+
+    axios.get(this.backendURL + '/expenses')
+        .then((res) => {
+          this.expenses = res.data
+        }).catch((err) => {
+      console.log(err)
+    })
+  },
   data() {
     return {
-      categories: [
-        {
-          id: Math.floor(Math.random() * 1000),
-          title: "Vape"
-        },
-        {
-          id: Math.floor(Math.random() * 1000),
-          title: "Jajan"
-        },
-      ],
-      expenses: [
-        {
-          id: Math.floor(Math.random() * 1000),
-          title: "Jajan Bakso",
-          money: 100000,
-          category: "Vape",
-          date: `${new Date().getFullYear()}-${new Date().getMonth().toLocaleString('id-ID', {
-            minimumIntegerDigits: 2
-          })}-${new Date().getDate().toLocaleString('id-ID', {
-            minimumIntegerDigits: 2
-          })}`,
-        },
-      ],
+      backendURL: 'http://localhost:3000',
+      categories: [],
+      expenses: [],
+      currentExpensesAmount: 100000,
       toast: Swal.mixin({
         toast: true,
         position: "top-right",
@@ -68,6 +71,7 @@ export default {
       })
     },
     handleCreateCategory(category) {
+      axios.post(this.backendURL + '/categories', category)
       this.categories = [...this.categories, category]
 
       this.toast.fire({
@@ -76,6 +80,7 @@ export default {
       })
     },
     handleDeleteCategory(category) {
+      axios.delete()
       this.categories = this.categories.filter(item => item !== category);
 
       this.toast.fire({
@@ -85,6 +90,8 @@ export default {
     },
     handleCreateExpense(expense) {
       this.expenses = [...this.expenses, expense]
+
+      this.currentExpensesAmount += Number(expense.money)
 
       return this.toast.fire({
         icon: "success",
@@ -102,6 +109,13 @@ export default {
     handleUpdateExpense(expense) {
       let expenseIndex = this.expenses.findIndex((e) => e.id === expense.id)
       this.expenses[expenseIndex] = expense
+
+      let sum = 0
+      this.expenses.forEach((item) => {
+        sum += Number(item.money)
+      })
+
+      this.currentExpensesAmount = sum
 
       this.toast.fire({
         icon: "success",

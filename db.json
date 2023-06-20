@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Vape"
+    },
+    {
+      "id": 2,
+      "title": "Jajan"
+    },
+    {
+      "id": 45,
+      "title": "Makan"
+    },
+    {
+      "id": 367,
+      "title": "Babi"
+    },
+    {
+      "id": 930,
+      "title": "Tolol"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "title": "Jajan Bakso",
+      "money": 100000,
+      "category": "Vape",
+      "date": "2023-05-20"
+    }
+  ]
+}

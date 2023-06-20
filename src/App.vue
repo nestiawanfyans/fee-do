@@ -17,7 +17,7 @@
       </div>
     </nav>
 
-    <main class="vh-100 m-5">
+    <main class="vh-100 mx-5 mt-5">
       <router-view></router-view>
     </main>
 </template>

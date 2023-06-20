@@ -41,6 +41,7 @@ export default {
     createCategory() {
       Swal.fire({
         title: 'Add new Category',
+        width: "600px",
         html: `
         <div class="form-group text-start">
          <label for="title" class="form-label">Category Title</label>
