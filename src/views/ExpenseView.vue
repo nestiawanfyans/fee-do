@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     handleUpdateCategory(category) {
-      const categoryIndex = this.categories.findIndex(category => category.id === category.id)
+      const categoryIndex = this.categories.findIndex(item => item.id === category.id)
       this.categories[categoryIndex] = category
 
       this.toast.fire({
