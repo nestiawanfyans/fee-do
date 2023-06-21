@@ -4,19 +4,21 @@ import ListIncome from '@/components/income/listIncome.vue'
 </script>
 
 <template>
-  <h1>Pemasukan</h1>
-  <p>Record Data Pemasukan kamu, agar uang kamu hemat!!</p>
-  <br />
-
-  <div>
-    <InputIncome :categories="categories" @create-income="handleCreateIncome" /> <br />
-    <ListIncome
-      :incomes="incomes"
-      :categories="categories"
-      @delete-income="handelDeleteIncome"
-      @update-income="handleUpdateIncome"
-    />
+  <div class="container mt-4">
+    <h1>Pemasukan</h1>
+    <p>Record Data Pemasukan kamu, agar uang kamu hemat!!</p>
     <br />
+
+    <div>
+      <InputIncome :categories="categories" @create-income="handleCreateIncome" /> <br />
+      <ListIncome
+        :incomes="incomes"
+        :categories="categories"
+        @delete-income="handelDeleteIncome"
+        @update-income="handleUpdateIncome"
+      />
+      <br />
+    </div>
   </div>
 </template>
 
