@@ -1,7 +1,7 @@
 
 <template>
   <div class="bg-white shadow-sm rounded p-2">
-    <div class="container me-2 mt-2">
+    <div class="ms-2 me-2 mt-2">
       <h5 class="text-body">Tambah Pemasukan</h5>
       <br />
 
@@ -12,26 +12,21 @@
             <span class="input-group-text" id="basic-addon1">Judul</span>
             <input type="text" class="form-control" v-model="titleIncome" placeholder="Judul Pemasukan" />
           </div>
+        </div>
 
+        <div class="col-md-6">
           <div class="input-group mb-3">
             <select class="form-select" v-model="category">
               <option selected disabled>Kategori Pemasukan</option>
-              <option v-for="categori in categories" :key="categori.id">{{ categori.name }}</option>
+              <option v-for="categori in categories" :key="categori.id">{{ categori.title }}</option>
             </select>
           </div>
         </div>
 
-        <div class="col-md-6">
-          <!--jumlah Pemasukan-->
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Rp.</span>
-            <input type="number" class="form-control" v-model="money" placeholder="Jumlah Pemasukan" />
-          </div>
-
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Tanggal</span>
-            <input type="date" class="form-control" v-model="dateNow" placeholder="Jumlah Pemasukan" />
-          </div>
+        <!--jumlah Pemasukan-->
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Rp.</span>
+          <input type="number" class="form-control" v-model="money" placeholder="Jumlah Pemasukan" />
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2">
@@ -76,9 +71,10 @@ export default {
           title: this.titleIncome,
           money: this.money,
           created_at: this.dateNow,
-          updated_at: null,
+          updated_at: this.dateNow,
           category: this.category
-        })
+        });
+        this.titleIncome  = ''; this.money = ''; this.category = 'Kategori Pemasukan';
       }
     }
   }
