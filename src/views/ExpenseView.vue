@@ -71,6 +71,7 @@ export default {
       })
     },
     handleCreateCategory(category) {
+      console.dir(category);
       axios.post(this.backendURL + '/categories', category)
       this.categories = [...this.categories, category]
 
