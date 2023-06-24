@@ -12,6 +12,128 @@
     font-family: 'Rubik', sans-serif;
 }
 
+.bg-icon-card-expense {
+    background-color: rgb(255 217 217 / 98%);
+    padding: 4px 13px;
+    border-radius: 10px;
+    font-size: 19px;
+    color: #ea4f4f;
+    font-weight: 700;
+    position: relative;
+    top: -5px;
+    height: 40px;
+}
+
+/*Home Css*/
+.banner-home {
+    background-color: #0c101c;
+    height: 240px;
+    margin-top: -0.5px;
+    color: #f2f2f2;
+}
+
+.border-title {
+    width: 80px;
+    height: 2px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+}
+
+.title-card {
+    color: #7a7878;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.m-min-banner {
+    margin-top: -100px;
+}
+
+.bg-icon-card {
+    background-color: rgb(226 230 245);
+    padding: 4px 13px;
+    border-radius: 10px;
+    font-size: 19px;
+    color: #5a72cb;
+    height: 40px;
+    font-weight: 700;
+    position: relative;
+    top: -5px;
+}
+
+.text-grey {
+    color: #837878 !important;
+}
+
+.card-cash {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.txt-sm {
+    font-size: 17px;
+}
+
+.link-card {
+    margin-top: -10px;
+    text-decoration: underline;
+    position: relative;
+    top: -12px;
+}
+
+.non-underline {
+    text-decoration: none !important;
+}
+
+.card-text-green {
+    color: #2cd35b;
+}
+
+.card-text-red {
+    color: #dc5454;
+}
+
+.border-ver-card {
+    height: 100%;
+    width: 4px;
+    background-color: #a2a2a2;
+    border-radius: 50px;
+}
+
+.border-hoz-card {
+    height: 4px;
+    width: 100%;
+    background-color: #a2a2a2;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+.bar-used {
+    height: 10px;
+    background-color: #5a72cb;
+    border-radius: 50px;
+}
+
+.bar-non-used {
+    height: 10px;
+    background-color: #dedede;
+    border-radius: 50px;
+    margin-left: 2px;
+}
+
+.expenses-cash {
+    margin-top: -10px;
+    font-size: 16px;
+}
+
+.hover-cursor:hover{
+    cursor: pointer;
+}
+
 /*#app {*/
 /*  max-width: 1280px;*/
 /*  margin: 0 auto;*/
