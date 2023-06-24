@@ -1,10 +1,6 @@
 {
   "categories": [
     {
-      "id": 1,
-      "title": "Gaji"
-    },
-    {
       "id": 2,
       "title": "Jajan"
     },
@@ -21,25 +17,21 @@
       "title": "Pemberian Orang Tua"
     },
     {
-      "id": 430,
-      "title": "Pay Latter"
+      "id": 9067,
+      "title": "Makan Bulanan"
     },
     {
-      "id": 767,
-      "title": "zxc"
-    },
-    {
-      "id": 310,
-      "title": "asd"
+      "id": 6693,
+      "title": "oke bos"
     }
   ],
   "expenses": [
     {
-      "id": 1,
-      "title": "Jajan Bakso",
-      "money": 100000,
-      "category": "Vape",
-      "date": "2023-05-20"
+      "id": 7763,
+      "title": "Ayam",
+      "money": "500000",
+      "category": "Makan",
+      "date": "2023-06-23"
     }
   ],
   "incomes": [
